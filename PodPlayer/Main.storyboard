@@ -656,6 +656,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="Sar-iS-Gd5"/>
                         </connections>
@@ -701,9 +702,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
                                 <rect key="frame" x="-1" y="2" width="315" height="16"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="JRV-cY-4Iz"/>
                                     <constraint firstAttribute="height" constant="5" id="lub-91-LYP"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Add Podcast" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tCL-sn-KBm">
@@ -711,10 +713,10 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-KZ-6Yd">
+                            <scrollView ambiguous="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-KZ-6Yd">
                                 <rect key="frame" x="5" y="48" width="303" height="252"/>
-                                <clipView key="contentView" id="k3T-9l-pkB">
-                                    <rect key="frame" x="1" y="23" width="301" height="228"/>
+                                <clipView key="contentView" ambiguous="YES" id="k3T-9l-pkB">
+                                    <rect key="frame" x="1" y="0.0" width="301" height="251"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="KDD-xe-pgd" viewBased="YES" id="KI6-fX-QPp">
@@ -796,9 +798,7 @@
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="303" id="1hu-24-Nqw"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Ear-wd-XlA"/>
-                                    <constraint firstAttribute="width" constant="303" id="UJF-9D-6ju"/>
-                                    <constraint firstAttribute="height" constant="135" id="dH9-gG-miV"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Ear-wd-XlA"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="YTR-LU-h1v">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
@@ -813,7 +813,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-3h-mfK">
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-3h-mfK">
                                 <rect key="frame" x="5" y="22" width="303" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="i7Y-lQ-tJT"/>
@@ -829,18 +829,12 @@
                             <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="5" id="CvI-dP-cLx"/>
                             <constraint firstAttribute="trailing" secondItem="FxU-3h-mfK" secondAttribute="trailing" constant="5" id="J7R-GQ-zEO"/>
                             <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" constant="5" id="Oy4-im-aj3"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" id="P0F-eV-ZfK"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" id="SMG-jp-Wpk"/>
-                            <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="5" id="TUf-ub-AYc"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" id="UAm-Yx-UKc"/>
                             <constraint firstAttribute="trailing" secondItem="ttS-KZ-6Yd" secondAttribute="trailing" constant="5" id="Ui6-yu-Yd7"/>
                             <constraint firstItem="ttS-KZ-6Yd" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="VrU-zg-EMs"/>
                             <constraint firstItem="FxU-3h-mfK" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="XdV-BG-hAA"/>
                             <constraint firstItem="ttS-KZ-6Yd" firstAttribute="top" secondItem="wVP-as-E56" secondAttribute="top" id="YOQ-zW-6sf"/>
-                            <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="5" id="lkg-aa-nfP"/>
                             <constraint firstItem="esw-i0-nmX" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="ovQ-WZ-6zK"/>
                             <constraint firstAttribute="trailing" secondItem="esw-i0-nmX" secondAttribute="trailing" constant="5" id="sj1-13-DsK"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" id="vkn-jC-opb"/>
                         </constraints>
                     </view>
                 </viewController>
