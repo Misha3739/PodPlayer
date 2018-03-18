@@ -1,0 +1,4 @@
+CREATE DATABASE PodPlayer
+GO
+USE PodPlayer
+GO
