@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="UI\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -77,9 +78,18 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PodcastView.cs" />
+    <Compile Include="UI\PodcastViewController.cs" />
+    <Compile Include="UI\PodcastView.designer.cs">
+      <DependentUpon>PodcastView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PodcastViewController.designer.cs">
+      <DependentUpon>PodcastViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="UI\PodcastView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

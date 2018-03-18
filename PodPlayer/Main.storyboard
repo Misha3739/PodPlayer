@@ -694,25 +694,14 @@
             </objects>
             <point key="canvasLocation" x="76" y="743"/>
         </scene>
-        <!--View Controller-->
+        <!--Podcast View Controller-->
         <scene sceneID="8O9-iD-zZj">
             <objects>
-                <viewController id="5hg-HP-gQi" sceneMemberID="viewController">
+                <viewController id="5hg-HP-gQi" customClass="PodcastViewController" sceneMemberID="viewController">
                     <view key="view" id="wVP-as-E56">
                         <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
-                                <rect key="frame" x="-1" y="2" width="315" height="16"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="JRV-cY-4Iz"/>
-                                    <constraint firstAttribute="height" constant="5" id="lub-91-LYP"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Add Podcast" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tCL-sn-KBm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <scrollView ambiguous="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-KZ-6Yd">
                                 <rect key="frame" x="5" y="48" width="303" height="252"/>
                                 <clipView key="contentView" ambiguous="YES" id="k3T-9l-pkB">
@@ -804,7 +793,7 @@
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UjQ-Sk-eAg">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="UjQ-Sk-eAg">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -813,6 +802,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
+                                <rect key="frame" x="-1" y="2" width="315" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="JRV-cY-4Iz"/>
+                                    <constraint firstAttribute="height" constant="5" id="lub-91-LYP"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Add Podcast" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tCL-sn-KBm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="AddPodcastButtonClick:" target="5hg-HP-gQi" id="eaR-PN-1Ql"/>
+                                </connections>
+                            </button>
                             <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-3h-mfK">
                                 <rect key="frame" x="5" y="22" width="303" height="22"/>
                                 <constraints>
@@ -837,6 +840,10 @@
                             <constraint firstAttribute="trailing" secondItem="esw-i0-nmX" secondAttribute="trailing" constant="5" id="sj1-13-DsK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddPodcastButton" destination="esw-i0-nmX" id="df8-zF-zyw"/>
+                        <outlet property="PodcastText" destination="FxU-3h-mfK" id="cFU-kQ-Dic"/>
+                    </connections>
                 </viewController>
                 <customObject id="41O-wr-V7l" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
