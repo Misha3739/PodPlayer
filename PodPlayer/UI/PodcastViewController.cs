@@ -45,6 +45,8 @@ namespace PodPlayer.UI
 
             PodcastText.StringValue = "http://feeds.feedburner.com/abcradio/starthere";
 
+            this._dataSource.GetPodcasts();
+
             this.PodcastTable.DataSource = _dataSource;
             this.PodcastTable.Delegate = new PodcastTableDelegate(_dataSource);
 

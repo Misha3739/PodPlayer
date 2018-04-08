@@ -5,18 +5,39 @@ using AppKit;
 using System.Linq;
 
 using PodPlayer.Models;
+using PodPlayer.Storage;
+using System.Data.SqlClient;
 
 namespace PodPlayer.UI.TableComponents
 {
-    public class PodcastDataSource : NSTableViewDataSource
+    public class PodcastDataSource : NSTableViewDataSource, IDisposable
     {
         private IList<Podcast> _podcasts;
 
         public IList<Podcast> Podcasts => _podcasts;
 
+        private PodcastsDBContext _context;
+
         public PodcastDataSource()
         {
             _podcasts = new List<Podcast>();
+
+            _context = new PodcastsDBContext();
+        }
+
+        public void GetPodcasts()
+        {
+            try{
+                _podcasts = _context.Podcasts.ToList();
+            }
+            catch(SqlException e)
+            {
+                throw;
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
         }
 
 		public override nint GetRowCount(NSTableView tableView)
@@ -30,6 +51,12 @@ namespace PodPlayer.UI.TableComponents
                 return;
             this.Podcasts.Add(podcast);
         }
+
+		protected override void Dispose(bool disposing)
+		{
+            _context?.Dispose();
+            base.Dispose(disposing);
+		}
 
 	}
 }
