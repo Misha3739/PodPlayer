@@ -67,7 +67,7 @@ namespace PodPlayer.UI
 
             var podcast = worker.GetPodcast(PodcastText.StringValue);
 
-            this._dataSource.Podcasts.Add(podcast);
+            this._dataSource.AddPodcast(podcast);
 
             this.PodcastTable.ReloadData();
 		}

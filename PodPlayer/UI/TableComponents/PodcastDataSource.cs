@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using AppKit;
+using System.Linq;
+
 using PodPlayer.Models;
 
 namespace PodPlayer.UI.TableComponents
@@ -22,6 +24,12 @@ namespace PodPlayer.UI.TableComponents
             return _podcasts?.Count ?? 0;
 		}
 
+        public void AddPodcast(Podcast podcast)
+        {
+            if (this.Podcasts.Any(p => p.Url == podcast.Url))
+                return;
+            this.Podcasts.Add(podcast);
+        }
 
 	}
 }
