@@ -8,9 +8,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>PodPlayer</RootNamespace>
     <AssemblyName>PodPlayer</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +27,7 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -41,13 +41,29 @@
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
-    <LinkMode>SdkOnly</LinkMode>
+    <LinkMode>None</LinkMode>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -66,10 +82,14 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="UI\" />
+    <Folder Include="Logic\" />
+    <Folder Include="Models\" />
+    <Folder Include="Logic\HttpClient\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -86,6 +106,22 @@
     <Compile Include="UI\PodcastViewController.designer.cs">
       <DependentUpon>PodcastViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\PodcastUrlWorker.cs" />
+    <Compile Include="Models\Podcast.cs" />
+    <Compile Include="Logic\ClientRest.cs" />
+    <Compile Include="Logic\Response.cs" />
+    <Compile Include="Logic\HttpClient\ModertHttpClient.cs" />
+    <Compile Include="Logic\HttpClient\InflightOperation.cs" />
+    <Compile Include="Logic\HttpClient\AsyncLock.cs" />
+    <Compile Include="Logic\HttpClient\Releaser.cs" />
+    <Compile Include="Logic\HttpClient\DataTaskDelegate.cs" />
+    <Compile Include="Logic\HttpClient\ByteArrayListStream.cs" />
+    <Compile Include="Logic\HttpClient\CancellableStreamContent.cs" />
+    <Compile Include="Logic\HttpClient\EmptyDisposable.cs" />
+    <Compile Include="Logic\HttpClient\ProgressStreamContent.cs" />
+    <Compile Include="Logic\HttpClient\ProgressStream.cs" />
+    <Compile Include="Logic\ISerializer.cs" />
+    <Compile Include="Models\PodcastXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

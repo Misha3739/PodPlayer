@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -702,14 +702,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView ambiguous="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-KZ-6Yd">
-                                <rect key="frame" x="5" y="48" width="303" height="252"/>
-                                <clipView key="contentView" ambiguous="YES" id="k3T-9l-pkB">
-                                    <rect key="frame" x="1" y="0.0" width="301" height="251"/>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-KZ-6Yd">
+                                <rect key="frame" x="2" y="53" width="309" height="247"/>
+                                <clipView key="contentView" id="k3T-9l-pkB">
+                                    <rect key="frame" x="1" y="0.0" width="307" height="246"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="KDD-xe-pgd" viewBased="YES" id="KI6-fX-QPp">
-                                            <rect key="frame" x="0.0" y="0.0" width="301" height="228"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="223"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -748,7 +748,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="179" minWidth="40" maxWidth="1000" id="UPf-OC-nDJ">
+                                                <tableColumn identifier="" width="185" minWidth="40" maxWidth="1000" id="UPf-OC-nDJ">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -762,11 +762,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="TJa-ZD-VWj">
-                                                            <rect key="frame" x="120" y="1" width="179" height="17"/>
+                                                            <rect key="frame" x="120" y="1" width="185" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eVy-A0-V5u">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="7hx-dF-wt6">
                                                                         <font key="font" metaFont="system"/>
@@ -785,10 +785,6 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="303" id="1hu-24-Nqw"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Ear-wd-XlA"/>
-                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="YTR-LU-h1v">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -798,15 +794,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="KDD-xe-pgd">
-                                    <rect key="frame" x="0.0" y="0.0" width="301" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
-                                <rect key="frame" x="-1" y="2" width="315" height="16"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="esw-i0-nmX">
+                                <rect key="frame" x="-1" y="-5" width="315" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="JRV-cY-4Iz"/>
-                                    <constraint firstAttribute="height" constant="5" id="lub-91-LYP"/>
+                                    <constraint firstAttribute="height" constant="22" id="y8j-84-eUQ"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Add Podcast" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tCL-sn-KBm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -816,11 +811,8 @@
                                     <action selector="AddPodcastButtonClick:" target="5hg-HP-gQi" id="eaR-PN-1Ql"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-3h-mfK">
-                                <rect key="frame" x="5" y="22" width="303" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="i7Y-lQ-tJT"/>
-                                </constraints>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-3h-mfK">
+                                <rect key="frame" x="5" y="26" width="303" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Podcast Url..." drawsBackground="YES" id="RTb-LN-rIa">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -829,15 +821,17 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="5" id="CvI-dP-cLx"/>
-                            <constraint firstAttribute="trailing" secondItem="FxU-3h-mfK" secondAttribute="trailing" constant="5" id="J7R-GQ-zEO"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" constant="5" id="Oy4-im-aj3"/>
-                            <constraint firstAttribute="trailing" secondItem="ttS-KZ-6Yd" secondAttribute="trailing" constant="5" id="Ui6-yu-Yd7"/>
-                            <constraint firstItem="ttS-KZ-6Yd" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="VrU-zg-EMs"/>
-                            <constraint firstItem="FxU-3h-mfK" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="XdV-BG-hAA"/>
-                            <constraint firstItem="ttS-KZ-6Yd" firstAttribute="top" secondItem="wVP-as-E56" secondAttribute="top" id="YOQ-zW-6sf"/>
-                            <constraint firstItem="esw-i0-nmX" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="ovQ-WZ-6zK"/>
-                            <constraint firstAttribute="trailing" secondItem="esw-i0-nmX" secondAttribute="trailing" constant="5" id="sj1-13-DsK"/>
+                            <constraint firstItem="FxU-3h-mfK" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="Bgo-ME-Z4n"/>
+                            <constraint firstItem="ttS-KZ-6Yd" firstAttribute="top" secondItem="wVP-as-E56" secondAttribute="top" id="DI5-Kq-Zfv"/>
+                            <constraint firstAttribute="trailing" secondItem="esw-i0-nmX" secondAttribute="trailing" constant="5" id="Igf-Ta-gyC"/>
+                            <constraint firstAttribute="trailing" secondItem="FxU-3h-mfK" secondAttribute="trailing" constant="5" id="KYW-LG-URg"/>
+                            <constraint firstAttribute="bottom" secondItem="esw-i0-nmX" secondAttribute="bottom" constant="2" id="MrC-Ry-Lji"/>
+                            <constraint firstAttribute="trailing" secondItem="ttS-KZ-6Yd" secondAttribute="trailing" constant="2" id="Nu6-Kc-j4j"/>
+                            <constraint firstItem="esw-i0-nmX" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="5" id="Qv6-do-7Oa"/>
+                            <constraint firstItem="ttS-KZ-6Yd" firstAttribute="leading" secondItem="wVP-as-E56" secondAttribute="leading" constant="2" id="WEY-dN-LJ3"/>
+                            <constraint firstItem="esw-i0-nmX" firstAttribute="top" secondItem="FxU-3h-mfK" secondAttribute="bottom" constant="2" id="cxD-Ze-DN1"/>
+                            <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="6" id="jgi-fU-jtn"/>
+                            <constraint firstItem="FxU-3h-mfK" firstAttribute="top" secondItem="ttS-KZ-6Yd" secondAttribute="bottom" constant="5" id="v4S-17-Bnx"/>
                         </constraints>
                     </view>
                     <connections>

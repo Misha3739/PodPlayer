@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using AppKit;
+using PodPlayer.Logic;
 
 namespace PodPlayer.UI
 {
@@ -34,15 +35,29 @@ namespace PodPlayer.UI
         {
         }
 
-        #endregion
+		public override void ViewDidLoad()
+		{
+            base.ViewDidLoad();
 
-        //strongly typed view accessor
-        public new PodcastView View
+            PodcastText.StringValue = "http://feeds.feedburner.com/abcradio/starthere";
+		}
+
+		#endregion
+
+		//strongly typed view accessor
+		public new PodcastView View
         {
             get
             {
                 return (PodcastView)base.View;
             }
         }
-    }
+
+        async partial void AddPodcastButtonClick(NSButton sender)
+		{
+            var worker = new PodcastUrlWorker();
+
+            var podcast = worker.GetPodcast(PodcastText.StringValue);
+		}
+	}
 }
