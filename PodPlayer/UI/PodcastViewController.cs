@@ -4,12 +4,16 @@ using System.Linq;
 using Foundation;
 using AppKit;
 using PodPlayer.Logic;
+using PodPlayer.Models;
+using PodPlayer.UI.TableComponents;
 
 namespace PodPlayer.UI
 {
     public partial class PodcastViewController : AppKit.NSViewController
     {
         #region Constructors
+
+        private readonly PodcastDataSource _dataSource = new PodcastDataSource();
 
         // Called when created from unmanaged code
         public PodcastViewController(IntPtr handle) : base(handle)
@@ -40,6 +44,10 @@ namespace PodPlayer.UI
             base.ViewDidLoad();
 
             PodcastText.StringValue = "http://feeds.feedburner.com/abcradio/starthere";
+
+            this.PodcastTable.DataSource = _dataSource;
+            this.PodcastTable.Delegate = new PodcastTableDelegate(_dataSource);
+
 		}
 
 		#endregion
@@ -58,6 +66,10 @@ namespace PodPlayer.UI
             var worker = new PodcastUrlWorker();
 
             var podcast = worker.GetPodcast(PodcastText.StringValue);
+
+            this._dataSource.Podcasts.Add(podcast);
+
+            this.PodcastTable.ReloadData();
 		}
 	}
 }

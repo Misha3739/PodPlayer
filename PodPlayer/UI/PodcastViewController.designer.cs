@@ -9,29 +9,37 @@ using System.CodeDom.Compiler;
 
 namespace PodPlayer.UI
 {
-	[Register ("PodcastViewController")]
-	partial class PodcastViewController
-	{
-		[Outlet]
-		AppKit.NSButton AddPodcastButton { get; set; }
+    [Register ("PodcastViewController")]
+    partial class PodcastViewController
+    {
+        [Outlet]
+        AppKit.NSButton AddPodcastButton { get; set; }
 
-		[Outlet]
-		AppKit.NSTextField PodcastText { get; set; }
+        [Outlet]
+        AppKit.NSTableView PodcastTable { get; set; }
 
-		[Action ("AddPodcastButtonClick:")]
-		partial void AddPodcastButtonClick (AppKit.NSButton sender);
-		
-		void ReleaseDesignerOutlets ()
-		{
-			if (AddPodcastButton != null) {
-				AddPodcastButton.Dispose ();
-				AddPodcastButton = null;
-			}
+        [Outlet]
+        AppKit.NSTextField PodcastText { get; set; }
 
-			if (PodcastText != null) {
-				PodcastText.Dispose ();
-				PodcastText = null;
-			}
-		}
-	}
+        [Action ("AddPodcastButtonClick:")]
+        partial void AddPodcastButtonClick (AppKit.NSButton sender);
+        
+        void ReleaseDesignerOutlets ()
+        {
+            if (AddPodcastButton != null) {
+                AddPodcastButton.Dispose ();
+                AddPodcastButton = null;
+            }
+
+            if (PodcastTable != null) {
+                PodcastTable.Dispose ();
+                PodcastTable = null;
+            }
+
+            if (PodcastText != null) {
+                PodcastText.Dispose ();
+                PodcastText = null;
+            }
+        }
+    }
 }
