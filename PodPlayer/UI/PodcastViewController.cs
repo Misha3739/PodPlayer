@@ -76,5 +76,11 @@ namespace PodPlayer.UI
 
             this.PodcastTable.ReloadData();
 		}
+
+		protected override void Dispose(bool disposing)
+		{
+            _dataSource?.Dispose();
+            base.Dispose(disposing);
+		}
 	}
 }
