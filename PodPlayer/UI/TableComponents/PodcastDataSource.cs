@@ -47,9 +47,15 @@ namespace PodPlayer.UI.TableComponents
 
         public void AddPodcast(Podcast podcast)
         {
-            if (this.Podcasts.Any(p => p.Url == podcast.Url))
-                return;
-            this.Podcasts.Add(podcast);
+            try
+            {
+                this.Podcasts.Add(podcast);
+                _context.SaveChanges();
+            }
+            catch(SqlException e)
+            {
+                throw;
+            }
         }
 
 		protected override void Dispose(bool disposing)

@@ -65,9 +65,12 @@ namespace PodPlayer.UI
 
         async partial void AddPodcastButtonClick(NSButton sender)
 		{
+            string url = PodcastText.StringValue;
+            if (this._dataSource.Podcasts.Any(p => p.Url == url)) return;
+
             var worker = new PodcastUrlWorker();
 
-            var podcast = worker.GetPodcast(PodcastText.StringValue);
+            var podcast = worker.GetPodcast(url);
 
             this._dataSource.AddPodcast(podcast);
 
