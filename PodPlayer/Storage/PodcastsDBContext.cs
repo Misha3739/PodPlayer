@@ -15,6 +15,6 @@ namespace PodPlayer.Storage
 
         public DbSet<Podcast> Podcasts { get; set; }
 
-
+        public DbSet<Episode> Episodes { get; set; }
     }
 }

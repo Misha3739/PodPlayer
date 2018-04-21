@@ -23,15 +23,15 @@ namespace PodPlayer.Logic
             var xmlSerializer  = new PodcastSerializer();
             PodcastXml podcastXml = _restClient.Execute<PodcastXml>(url,  xmlSerializer).Data;
             if (podcastXml == null) return null;
-            return new Podcast()
+            Podcast podcast = new Podcast()
             {
                 Title = podcastXml.Channel?.Title,
+                ImageUrl = podcastXml.Channel?.Image?.Url,
                 Url = url
             };
+
+            return podcast;
         }
 
-        void HandleNSUrlSessionResponse(NSData data, NSUrlResponse response, NSError error)
-        {
-        }
     }
 }

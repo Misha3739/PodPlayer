@@ -134,6 +134,7 @@
     <Compile Include="UI\TableComponents\PodcastDataSource.cs" />
     <Compile Include="UI\TableComponents\PodcastTableDelegate.cs" />
     <Compile Include="Storage\PodcastsDBContext.cs" />
+    <Compile Include="Models\Episode.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
