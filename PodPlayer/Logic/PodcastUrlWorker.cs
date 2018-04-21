@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Web;
 using Foundation;
+using PodPlayer.Logic.Serializer;
 using PodPlayer.Models;
 
 namespace PodPlayer.Logic

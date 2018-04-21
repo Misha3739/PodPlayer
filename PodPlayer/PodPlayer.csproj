@@ -93,6 +93,7 @@
     <Folder Include="Logic\HttpClient\" />
     <Folder Include="UI\TableComponents\" />
     <Folder Include="Storage\" />
+    <Folder Include="Logic\Serializer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -129,12 +130,16 @@
     <Compile Include="Logic\HttpClient\EmptyDisposable.cs" />
     <Compile Include="Logic\HttpClient\ProgressStreamContent.cs" />
     <Compile Include="Logic\HttpClient\ProgressStream.cs" />
-    <Compile Include="Logic\ISerializer.cs" />
     <Compile Include="Models\PodcastXml.cs" />
     <Compile Include="UI\TableComponents\PodcastDataSource.cs" />
     <Compile Include="UI\TableComponents\PodcastTableDelegate.cs" />
     <Compile Include="Storage\PodcastsDBContext.cs" />
     <Compile Include="Models\Episode.cs" />
+    <Compile Include="Logic\Serializer\PodcastSerializer.cs" />
+    <Compile Include="Logic\Serializer\ISerializer.cs" />
+    <Compile Include="Logic\Serializer\DataContractPodcastSerializer.cs" />
+    <Compile Include="Logic\Serializer\JsonSerializer.cs" />
+    <Compile Include="Logic\Serializer\CustomPodcastSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

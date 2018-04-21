@@ -1,10 +1,13 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace PodPlayer.Logic.Serializer
 {
-    public class JsonSerializer
+    public class JsonSerializer : ISerializer
     {
-        public JsonSerializer()
+        public T Deserialize<T>(string content)
         {
+            return JsonConvert.DeserializeObject<T>(content);
         }
     }
 }
