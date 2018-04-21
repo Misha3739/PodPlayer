@@ -20,7 +20,7 @@ namespace PodPlayer.Logic
 
         public Podcast GetPodcast(string url)
         {
-            var xmlSerializer  = new PodcastSerializer();
+            var xmlSerializer  = new DataContractPodcastSerializer();
             PodcastXml podcastXml = _restClient.Execute<PodcastXml>(url,  xmlSerializer).Data;
             if (podcastXml == null) return null;
             Podcast podcast = new Podcast()
