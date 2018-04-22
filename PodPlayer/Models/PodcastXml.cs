@@ -21,12 +21,12 @@ namespace PodPlayer.Models
         [DataMember(Name = "title")]
         public string Title { get; set; }
 
-        [XmlElement(ElementName = "itunes:author")]
-        [DataMember(Name = "itunes:author")]
+        [XmlElement(ElementName = "itunes_x003A_author")]
+        [DataMember(Name = "itunes_x003A_author")]
         public string Author { get; set; }
 
-        [XmlElement(ElementName = "itunes:image")]
-        [DataMember(Name = "itunes:image")]
+        [XmlElement(ElementName = "itunes_x003A_image")]
+        [DataMember(Name = "itunes_x003A_image")]
         public Image Image { get; set; }
 
         [XmlElement(ElementName = "link")]

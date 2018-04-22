@@ -21,5 +21,16 @@ namespace PodPlayer.Logic.Serializer
             }
 
         }
+
+        public string Serialize<T>(T value)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                xmlSerializer.Serialize(textWriter, value);
+                return textWriter.ToString();
+            }
+        }
     }
 }

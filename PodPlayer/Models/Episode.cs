@@ -8,6 +8,8 @@ namespace PodPlayer.Models
         [Key]
         public long? Id { get; set; }
 
+        public string Title { get; set; }
+
         public DateTime? PublishDate { get; set; }
 
         public string AudioUrl { get; set; }
