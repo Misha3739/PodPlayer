@@ -70,7 +70,7 @@ namespace PodPlayer.UI
 
             var worker = new PodcastUrlWorker();
 
-            var podcast = worker.GetPodcast2(url);
+            var podcast = worker.GetPodcast3(url);
 
             this._dataSource.AddPodcast(podcast);
 

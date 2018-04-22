@@ -9,6 +9,9 @@ using Foundation;
 using PodPlayer.Logic.Serializer;
 using PodPlayer.Models;
 using System.Xml.Linq;
+using System.Xml;
+using Terradue.ServiceModel.Syndication;
+using System.Collections.Generic;
 
 namespace PodPlayer.Logic
 {
@@ -44,7 +47,7 @@ namespace PodPlayer.Logic
                 XDocument feedXML = XDocument.Load(url);
                 Podcast podcast = new Podcast();
                 podcast.Title = feedXML.Descendants("title").FirstOrDefault()?.Value;
-                podcast.ImageUrl = feedXML.Descendants($"itunes:image").FirstOrDefault()?.Attribute("href")?.Value;
+                podcast.ImageUrl = feedXML.Descendants($"{ns}image").FirstOrDefault()?.Attribute("href")?.Value;
                 podcast.Url = url;
                 var episodes = from feed in feedXML.Descendants("item")
                                select new Episode
@@ -60,6 +63,27 @@ namespace PodPlayer.Logic
             {
                 throw;
             }
+        }
+
+        public Podcast GetPodcast3(string url){
+            Podcast podcast = new Podcast();
+            SyndicationFeed feed = null;
+            using(XmlReader reader = XmlReader.Create(url))
+            {
+                SyndicationFeed.Load(reader);
+            }
+
+            podcast.Title = feed.Title.Text;
+            podcast.ImageUrl = feed.ImageUrl.ToString();
+            podcast.Episodes = new List<Episode>();
+            foreach (SyndicationItem item in feed.Items)
+            {
+                Episode episode = new Episode();
+                episode.Title = item.Title.Text;
+                episode.AudioUrl = item.BaseUri.ToString();
+                episode.PublishDate = item.PublishDate.DateTime;
+            }
+            return podcast;
         }
 
     }
